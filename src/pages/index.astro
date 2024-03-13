@@ -1,63 +1,66 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import MailIcon from '../components/icons/Gmail.astro';
-import SocialPill from '../components/SocialPill.astro';
+import Layout from "../layouts/Layout.astro"
+
+import AboutMe from "../components/AboutMe.astro"
+import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Education from "../components/Education.astro"
+import Experience from "../components/Experience.astro"
+import ProfileCheck from "../components/icons/ProfileCheck.astro"
+import Projects from "../components/Projects.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import Hero from "../components/Hero.astro"
 ---
 
 <Layout 
-title="Portfolio de Miguel Acevedo - Desarrollador Android"
-
+title="Portfolio de Miguel Acevedo - Desarrollador y Pogramador Android - Desarrollador y Programador Web"
 description="Contrata a Miguel Acevedo para trabajar como desarrollador Android">
-	<section class="w-full lg:w-[740px] mx-auto py-44">
+<main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Educación
+      </h2>
+      <Education />
+    </SectionContainer>
 
-	<img 
-	class="w-12 h-12 rounded-full mb-4" 
-	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwUib9UkdfRdxLqvwomiMxU2dQFUbnLxAhwamgBcJZggReEytR5rSGQV5-bk-88szacA0&usqp=CAU" 
-	alt="macevedo photo" >
-    
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-	<main>
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-			Hey, soy macevedo 
-			<a 
-				href="https://linkedin.com/in/macevedoponce/" 
-				target="_blank"
-				rel="noopener"
-				class="flex justify-center items-center"
-				>
-			<div class="flex justify-center items-center">
-				<Badge>👋 Disponible para trabajar</Badge>
-			</div></a>
-		</h1>
-		<h2 class="text-2xl text-wrap">
-			<span>+2 años de experiencia</span>
-			<span class="text-yellow-200/90">, Desarrollador Web y Android.</span>
-			<span class="text-red-200/90"> De Huancayo, Perú.</span>
-			<span class="opacity-70">Especializado en el desarrollo de aplicaciones móviles nativas</span>
-		</h2>
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
 
-		<nav class="flex gap-x-4 mt-8">
-			<SocialPill href="https://linkedin.com/in/macevedoponce/">
-				<LinkedInIcon class="w-6 h-6"/>
-				LinkedIn
-			</SocialPill>
-
-			<SocialPill href="https://github.com/macevedoponce/">
-				<GitHubIcon class="w-6 h-6"/>
-				GiHub
-			</SocialPill>
-
-			<SocialPill href="mailto:miguelacevedoponce@gmail">
-				<MailIcon class="w-6 h-6"/>
-				miguelacevedoponce@gmail.com
-			</SocialPill>
-		</nav>
-	</main>
-</section>
-
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
 </Layout>
-
-
